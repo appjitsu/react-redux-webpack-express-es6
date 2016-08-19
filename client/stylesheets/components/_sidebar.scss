@@ -1,0 +1,64 @@
+@import '../vendors/bootstrap/variables';
+
+$sm-screen-ratio: 2/3;
+$sidebar-width: 260px;
+$sidebar-width-sm: $sm-screen-ratio * $sidebar-width;
+$sidebar-color: #34495e;
+$sidebar-brand-width: 150px;
+$sidebar-brand-width-sm: (4/5) * $sidebar-brand-width;
+$sidebar-nav-width: $sidebar-width - (($sidebar-width / 12) * 3);
+$md-screen: map-get($grid-breakpoints, md);
+
+.sidebar {
+    position: fixed;
+    @media screen and (min-width: $md-screen){
+        width: $sidebar-width;
+    }
+    @media screen and (max-width: $md-screen){
+        width: $sidebar-width-sm;
+    }
+    top: 0;
+    bottom: 0;
+    margin-top:0;
+    margin-bottom:0;
+    & + * {
+        @media screen and (min-width: $md-screen){
+            margin-left: $sidebar-width;
+            .navbar {
+                margin-left: $sidebar-width;
+            }
+        }
+        @media screen and (max-width: $md-screen){
+            margin-left: $sidebar-width-sm;
+            .navbar {
+                margin-left: $sidebar-width-sm;
+            }
+        }
+    }
+    background-color: $sidebar-color;
+
+    & img.brand {
+        @media screen and (min-width: $md-screen){
+            width: $sidebar-brand-width;
+        }
+        @media screen and (max-width: $md-screen){
+            width: $sidebar-brand-width-sm;
+        }
+        height: auto;
+        @media screen and (min-width: $md-screen){
+            margin-left: ($sidebar-nav-width - $sidebar-brand-width) / 2;
+        }
+        @media screen and (max-width: $md-screen){
+            margin-left: ($sidebar-width-sm - $sidebar-brand-width-sm) / 2;
+        }
+    }
+    & .sidebar-nav {
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: $margin-top-global + 0.2;
+    }
+}
+
+.sidebar-left {
+    left: 0;
+}

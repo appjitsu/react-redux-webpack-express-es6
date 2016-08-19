@@ -1,0 +1,154 @@
+/* ----------------------------------------------------------
+ * Application Layout
+ * ---------------------------------------------------------- */
+
+// colors
+$app_white   : #FFFFFF;
+$app_white_10: rgba($app-white, 0.1);
+$app_white_30: rgba($app-white, 0.3);
+$app_white_96: rgba($app-white, 0.96) ;
+
+//urls
+$app_bg_url: url(transparent.jpg);
+
+body {
+  background: linear-gradient(to bottom, $app_white_96 0, $app_white_96 100%), $app_bg_url center / cover;
+  overflow:hidden;
+}
+
+/* ---------------------
+ * Drawer
+ * --------------------- */
+
+#drawer {
+  background-color: transparent;
+
+  &.is-visible {
+    background-color: $app_white;
+  }
+
+  .mdl-navigation a.mdl-navigation__link {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 0;
+
+    i,
+    img {
+      width: 32px;
+      margin-right: 8px;
+      margin-top: -8px;
+      margin-bottom: -8px;
+      margin-left: 0px;
+    }
+    i {
+      text-indent: -2px;
+    }
+  }
+}
+
+#accordion {
+  height: 100%;
+
+  .mdl-navigation {
+    padding: 4px 0;
+  }
+
+  .mdlext-accordion__panel {
+
+    .mdlext-accordion__tab {
+      img {
+        width: 32px;
+        height: auto;
+        margin: 0;
+        padding: 0;
+      }
+      .mdlext-accordion__tab__caption {
+        font-size: 16px;
+        margin: 0;
+      }
+    }
+
+    &:first-child .mdlext-accordion__tab {
+      height: 64px;
+      min-height: 64px;
+      min-width: 64px;
+
+      .mdlext-accordion__tab__caption {
+        font-size: 20px;
+      }
+    }
+    .mdlext-accordion__tabanel {
+      padding: 0;
+    }
+  }
+}
+
+.is-small-screen #accordion .mdlext-accordion__panel:first-child .mdlext-accordion__tab {
+  height: 56px;
+  min-height: 56px;
+  min-width: 56px;
+}
+
+/* ---------------------
+ * Content
+ * --------------------- */
+#content-panel {
+  padding-left: $padding;
+  padding-right: $padding;
+
+  & > h1:first-child {
+    margin-top: 4px;
+  }
+  & > h5:first-child {
+    margin-top: 12px;
+  }
+}
+
+/* ---------------------
+ * Footer
+ * --------------------- */
+.mdl-mini-footer {
+  background-color: transparent;
+  color: unquote("rgba(#{$color-primary}, 0.6)");
+}
+
+
+/* ---------------------
+ * Accordion
+ * --------------------- */
+.mdlext-accordion {
+  .mdlext-accordion__panel {
+
+    .mdlext-accordion__panel__state:after {
+      content: 'expand_more'; // Default material icon
+    }
+    &[open] {
+      .mdlext-accordion__panel__state:after {
+        content: 'expand_less'; // Default material icon
+      }
+    }
+  }
+}
+
+
+////////// Phone - decrease padding //////////
+@media (max-width: $grid-tablet-breakpoint - 1) {
+
+  .mdl-layout__drawer-button {
+    left: -$padding / 2;
+  }
+  .mdl-layout__title,
+  .mdl-layout-title {
+    margin-left: -$padding / 2;
+  }
+  #content-panel {
+    padding: 0 $padding / 2;
+  }
+  .mdl-mini-footer {
+    padding: 0 $padding / 2;
+
+    & .mdl-logo {
+      padding-right: 4px;
+    }
+  }
+}

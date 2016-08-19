@@ -1,0 +1,31 @@
+$search-border-width: .18rem;
+// $search-border-width: 0;
+$search-border-color: #c0c2c0;
+$search-border-color-active: $link-color;
+#search {
+    margin-top: $margin-top-global;
+    margin-bottom: 1rem;
+    & .input-group-addon {
+        background-color: #fff;
+        border-width: $search-border-width;
+        border-color: $search-border-color;
+        &.active {
+            border-color: $search-border-color-active;
+        }
+    }
+    & input[type=text] {
+        border-width: $search-border-width;
+        border-color: $search-border-color;
+        border-left: 0;
+        border-right: 0;
+        &:focus, &:focus + .input-group-addon {
+            border-color: $search-border-color-active;
+        }
+    }
+    .help-text {
+        font-size: 12px;
+        margin-top: .5rem;
+        margin-left: $explain-margin-left;
+        margin-bottom: 0;
+    }
+}

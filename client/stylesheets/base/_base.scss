@@ -1,0 +1,17 @@
+@import 'variables';
+@import '../vendors/bootstrap/variables';
+
+*, *::before, *::after, input[type="search"] {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content:" ";
+  display:table;
+  clear:both;
+}
+
+body {
+    padding-bottom: 65px;
+    background-color: $gray-lightest;
+}

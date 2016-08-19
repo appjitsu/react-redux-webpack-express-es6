@@ -1,0 +1,26 @@
+#viz {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: -16px;
+    & .nav-tabs {
+        border-bottom: 1px solid #fff;
+        margin-left: 15px;
+        & .nav-link {
+            &.active {
+                border-color: #fff;
+            }
+            &:not(.active):hover{
+                border-bottom: 1px solid #fff;
+            }
+        }
+    }
+    & .tab-content {
+        background-color: #fff;
+        min-height: 100vh;
+        padding-left: 40px;
+        padding-right: 40px;
+        &:before {
+            content: "\00a0 ";
+        }
+    }
+}

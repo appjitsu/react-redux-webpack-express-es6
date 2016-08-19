@@ -1,0 +1,20 @@
+#explain {
+    margin-left: $explain-margin-left;
+    & a.heading {
+        color: $link-color;
+        & .fa {
+            margin-right: 5px;
+        }
+        font-size: 12px;
+        font-weight: bold;
+        border-bottom: 1px dotted #c2c0c2;
+        &:hover {
+            cursor: pointer;
+        }
+        &:active,
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+}

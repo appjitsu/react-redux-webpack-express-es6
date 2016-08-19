@@ -1,0 +1,15 @@
+#controls {
+    & .navbar {
+        padding: 0;
+        form {
+            float: none;
+            margin-top: -36px;
+            input[type=range] {
+                border: 0;
+                & + .thumb {
+                    background-color: $link-color;
+                }
+            }
+        }
+    }
+}
