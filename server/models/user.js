@@ -1,8 +1,8 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
-const bcrypt = require('bcrypt-nodejs')
+import mongoose from 'mongoose'
+import bcrypt from 'bcrypt-nodejs'
 
 // Define our model
+const Schema = mongoose.Schema
 const userSchema = new Schema({
   email: { type: String, unique: true, lowercase: true },
   password: String
@@ -38,7 +38,4 @@ userSchema.methods.comparePassword = function(candidatePassword, callback) {
 }
 
 // Create the model class
-const ModelClass = mongoose.model('user', userSchema)
-
-// Export the model
-module.exports = ModelClass
+export default mongoose.model('user', userSchema)

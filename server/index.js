@@ -1,15 +1,16 @@
 // Main starting point of the application
-const express = require('express')
-const webpack = require('webpack')
-const http = require('http')
-const bodyParser = require('body-parser')
-const morgan = require('morgan')
-const router = require('./router')
-const cors = require('cors')
-const yaml = require('node-yaml-config')
+import express from 'express'
+import webpack from 'webpack'
+import http from 'http'
+import bodyParser from 'body-parser'
+import morgan from 'morgan'
+import cors from 'cors'
+import yaml from 'node-yaml-config'
 
-var config = yaml.load(__dirname + '/config.yml')
-console.log("CONFIG:", config)
+import router from './router'
+
+const config = yaml.load(__dirname + '/config.yml')
+// console.log("CONFIG:", config)
 
 // App Setup
 const app = express()

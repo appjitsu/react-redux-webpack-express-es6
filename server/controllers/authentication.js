@@ -1,7 +1,9 @@
-const jwt = require('jwt-simple')
-const User = require('../models/user')
-const path = require('path')
-const yaml = require('node-yaml-config')
+import jwt from 'jwt-simple'
+import path from 'path'
+import yaml from 'node-yaml-config'
+
+import User from '../models/user'
+
 const config = yaml.load(path.resolve('./server/config.yml'))
 
 function tokenForUser(user) {
@@ -9,13 +11,13 @@ function tokenForUser(user) {
   return jwt.encode({ sub: user.id, iat: timestamp }, config.server.secret)
 }
 
-exports.signin = function(req, res, next) {
+function signin(req, res, next) {
   // User has already had their email and password auth'd
   // We just need to give them a token
   res.send({ token: tokenForUser(req.user) })
 }
 
-exports.signup = function(req, res, next) {
+function signup(req, res, next) {
   const email = req.body.email
   const password = req.body.password
 
@@ -45,4 +47,9 @@ exports.signup = function(req, res, next) {
       res.json({ token: tokenForUser(user) })
     })
   })
+}
+
+export default {
+  signin,
+  signup
 }
