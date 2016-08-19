@@ -1,4 +1,4 @@
-# React/Redux Webpack Express ES6 Boilerplate
+# React/Redux Webpack Express ES6 Boilerplate w/ Express for JWT Authentication
 
 ## The Stack
 
@@ -23,16 +23,20 @@ $ npm install
 
 ## Development
 
+* Hot reloading via webpack dev server:
+  * `$ npm run dev`
+  * Point your browser to [http://localhost:8080/](http://localhost:8080/), page hot reloads automatically when there are changes
+
+## Production
+
 There are two ways in which you can build and run the web app:
 
-* Build once for (ready for ***Production***):
+* Build it!
   * `$ npm run build`
-  * Open `build/index.html` through the local webserver
 
-
-* Hot reloading via webpack dev server:
+* Pre-flight Check!
   * `$ npm start`
-  * Point your browser to http://localhost:3000/, page hot reloads automatically when there are changes
+  * Point your browser to [http://localhost:3000/](http://localhost:3000/)
 
 ## Testing
 
