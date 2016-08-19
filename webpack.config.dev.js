@@ -52,7 +52,7 @@ module.exports = {
         'NODE_ENV': JSON.stringify('development')
       }
     }),
-    new FaviconsWebpackPlugin('./client/images/brand/cinchapi-logo-alt.png'),
+    new FaviconsWebpackPlugin('./client/images/logo.png'),
     new HtmlWebpackPlugin({
       template: './client/index.html',
       inject: true
