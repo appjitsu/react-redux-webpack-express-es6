@@ -10,7 +10,7 @@
   "author": "Jason Cochran",
   "main": "./server/index.js",
   "scripts": {
-    "start": "nodemon ./server/index.js",
+    "start": "nodemon ./server/index.js --exec babel-node --presets es2015,stage-2",
     "dev": "webpack-dev-server --config ./webpack.config.dev.js --hot --inline --progress",
     "build": "BABEL_ENV=production webpack -p --config webpack.config.production.js",
     "test": "NODE_ENV=test ./node_modules/.bin/mocha  -w --opts ./mocha.opts './src/**/*.spec.js'",
@@ -19,7 +19,6 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
-    "chart.js": "^2.2.1",
     "cors": "^2.7.1",
     "eq.js": "1.9.0",
     "express": "^4.13.3",
@@ -42,8 +41,6 @@
     "react": "^15.3.0",
     "react-addons-css-transition-group": "^15.3.0",
     "react-addons-update": "^15.3.0",
-    "react-chartjs": "^0.8.0",
-    "react-chartjs-2": "^1.2.3",
     "react-dom": "^15.3.0",
     "react-helmet": "^3.1.0",
     "react-mdl": "^1.6.1",
@@ -64,6 +61,7 @@
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
+    "babel-cli": "^6.11.4",
     "babel-core": "^6.5.2",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.1",
